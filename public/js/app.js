@@ -49,7 +49,7 @@ socket.on('self',message=>{
     // document.write(message);
 
     var ele = createMessage(message.msg,"right",message.username);
-    console.log(message); 
+    // console.log(message); 
     document.getElementById("cont").appendChild(ele);
     chatdiv.scrollTop = chatdiv.scrollHeight;
 
@@ -64,7 +64,7 @@ chatform.addEventListener('submit',(e)=>{
 
     const msg=e.target.elements.chat.value;
 
-    console.log(msg  + "by " + socket.id);
+    // console.log(msg  + "by " + socket.id);
 
 
 

@@ -11,7 +11,7 @@ const path = require("path");
 const { emit } = require("process");
 
 // Set port to 80
-const port = 80 || process.env.PORT;
+const port =  process.env.PORT || 80;
 
 // Setting view engin to ejs for serving static files
 app.set("view engine", "ejs");
@@ -45,7 +45,7 @@ app.get("/", (req, res) => {
 app.get("/chat",(req,res)=>{
     username= req.query.name;
     res.render("chatpage");
-    console.log(username.toUpperCase()  + " joined the chat");
+    // console.log(username.toUpperCase()  + " joined the chat");
 });
 
 
@@ -53,7 +53,7 @@ app.get("/chat",(req,res)=>{
 io.on('connection', socket => {
 
     
-    console.log("A user" + username.toUpperCase() +" Connection made........");
+    // console.log("A user" + username.toUpperCase() +" Connection made........");
 
 
     // This is one way to send message 
@@ -74,7 +74,7 @@ io.on('connection', socket => {
 
     // To all clients except self
     socket.broadcast.emit('message', { msg:(username.toUpperCase() +" has joined a chat"),username:username });
-    console.log(username+"has joined a chat ");
+    // console.log(username+"has joined a chat ");
 
     // In general as server
     io.emit();
@@ -83,11 +83,11 @@ io.on('connection', socket => {
 
     // This is for recieved messages from the clients
     socket.on('chatMessage', message => {
-        console.log(message);
+        // console.log(message);
 
         var id= message.id;
         var name = userlist.get(id);
-        console.log("sent by " , name);
+        // console.log("sent by " , name);
         socket.broadcast.emit('message',{msg:message.msg , username:name});
         socket.emit("self",{msg:message.msg , username:name});
     
@@ -103,7 +103,7 @@ io.on('connection', socket => {
     socket.on('disconnect', function () {
 
         io.emit('message',{msg:`${userlist.get(socket.id)} has left the chat` , username:userlist.get(socket.id)});
-        console.log("A user disconnects ....");
+        // console.log("A user disconnects ....");
 
     });
 
@@ -119,7 +119,7 @@ module.exports = {
 
 
 server.listen(port, () => {
-    console.log(`server started at localhost:${port}`);
+    // console.log(`server started at localhost:${port}`);
 })
 
 
