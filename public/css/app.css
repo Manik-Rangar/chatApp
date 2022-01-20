@@ -1,18 +1,25 @@
 body{
-    /* background-color: powderblue; */
+    background-color: powderblue;
     box-sizing: border-box;
     padding: 0;
     padding: 0;
     overflow-x: hidden;
+    overflow-y: hidden;
 
-    background-image: url("https://images.unsplash.com/photo-1542559272-819e1934ac51?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80");
+    background: url("https://images.unsplash.com/photo-1542559272-819e1934ac51?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80");
 
     /* background-image: url("http://techhead.co/wp-content/uploads/2014/12/New-vChat-Logo-White.png"); */
     /* background: center; */
-    background-repeat: no-repeat;
+    background-size: 100vh 100vw;
+    background-repeat:repeat-y;
     background-size: cover;
+    
 }
 
+.outer{
+    width: 95vw;
+    height: 90vh;
+}
 .container{
     width: 550px;
     height: 500px;
@@ -81,7 +88,7 @@ body{
 
 #input_form input{
     width: 80%;
-    height: 30px;
+    min-height: 30px;
     border-radius: 10px ;
     padding: 10px;
 }
@@ -160,4 +167,26 @@ body{
     
 }
 
+@media screen and (max-width:614px) {
+
+    .container{
+        width: 90%;
+        height: 70%;
+    }
+    #input_form{
+        width: 90%;
+        /* height: 70vh; */
+        /* padding: 0px */
+    }
+    #input_form input{
+        width: 65%;
+        overflow-x: scroll;
+
+    }
+    #input_form button{
+        width: 20%;
+        font-size: 100%;
+        
+    }
+}
 
