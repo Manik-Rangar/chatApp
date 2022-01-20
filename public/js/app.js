@@ -6,7 +6,7 @@ const socket = io();
 const chatform = document.getElementById('input_form');
 const chatdiv = document.getElementById('cont'); 
 const submitbutton=document.getElementById("submit_btn");
-// const audio = new Audio('./audio/ping.mp3');
+const audio = new Audio('./audio/ping.mp3');
 
 // All the messages comming to the client can be handled from ths side
 
@@ -27,8 +27,8 @@ function createMessage(s,cl,username)
 <div class="lower"> ${s}</div>`;
     ele.classList.add(cl);
 
-    // if(cl=="left")
-    // audio.play();
+    if(cl=="left")
+    audio.play();
 
     return ele;
    
