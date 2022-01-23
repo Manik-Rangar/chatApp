@@ -17,17 +17,29 @@ function createMessage(s,cl,username)
     var cur_time = (new Date()).toLocaleTimeString();
     var newStr = cur_time.substring(0,6 - 1) + cur_time.substring(8, cur_time.length);
 
+    if(cl=="center")
+    {
+        ele.innerHTML=`<div class="upper">
+    <span id="username">${username}</span>
+    <span id="time">${newStr}</span>
+</div>
 
-
-    ele.innerHTML=`<div class="upper">
+<div class="lower2"> ${s}</div>`;
+    }
+    else
+    {
+        ele.innerHTML=`<div class="upper">
     <span id="username">${username}</span>
     <span id="time">${newStr}</span>
 </div>
 
 <div class="lower"> ${s}</div>`;
+    }
+
     ele.classList.add(cl);
 
-    if(cl=="left")
+
+    if(cl=="left"||cl=="center")
     audio.play();
 
     return ele;
@@ -38,6 +50,17 @@ function createMessage(s,cl,username)
     // document.write(message);
 
     var ele = createMessage(message.msg,"left",message.username);
+    console.log(message); 
+    document.getElementById("cont").appendChild(ele);
+    chatdiv.scrollTop = chatdiv.scrollHeight;
+
+    
+});
+
+socket.on('system-message',message=>{
+    // document.write(message);
+
+    var ele = createMessage(message.msg,"center",message.username);
     console.log(message); 
     document.getElementById("cont").appendChild(ele);
     chatdiv.scrollTop = chatdiv.scrollHeight;
@@ -61,17 +84,24 @@ chatform.addEventListener('submit',(e)=>{
     e.preventDefault();
 
     
-
     const msg=e.target.elements.chat.value;
 
+    let temp=msg.trim();
+    if(temp!="")
+    {
     // console.log(msg  + "by " + socket.id);
 
 
 
     socket.emit('chatMessage',{msg:msg , id:socket.id });
-    e.target.elements.chat.value="";
+    
     e.target.elements.chat.focus();
+
+    }
+    e.target.elements.chat.value="";
+
 });
+
 
 
 

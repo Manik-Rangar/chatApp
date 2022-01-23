@@ -69,11 +69,11 @@ io.on('connection', socket => {
     setTimeout(function () {
         // To a single client
         userlist.set(socket.id,username);
-        socket.emit('message', { msg:("Hello " + username.toUpperCase() + " Welcome to the vchat"),username:username});
+        socket.emit('system-message', { msg:("Hello " + username.toUpperCase() + " Welcome to the vchat"),username:"VCHAT"});
     }, 2000);
 
     // To all clients except self
-    socket.broadcast.emit('message', { msg:(username.toUpperCase() +" has joined a chat"),username:username });
+    socket.broadcast.emit('system-message', { msg:(username.toUpperCase() +" has joined a chat"),username:"VCHAT" });
     // console.log(username+"has joined a chat ");
 
     // In general as server
@@ -102,7 +102,7 @@ io.on('connection', socket => {
     // This means disconnected from the server 
     socket.on('disconnect', function () {
 
-        io.emit('message',{msg:`${userlist.get(socket.id)} has left the chat` , username:userlist.get(socket.id)});
+        io.emit('system-message',{msg:`${userlist.get(socket.id)} has left the chat` , username:"VCHAT"});
         // console.log("A user disconnects ....");
 
     });

@@ -1,5 +1,5 @@
 body{
-    background-color: powderblue;
+   
     box-sizing: border-box;
     padding: 0;
     padding: 0;
@@ -29,12 +29,24 @@ body{
     padding: 20px;
     overflow-y: scroll;   
 }
+#dark-mode{
+    float: right;
+}
 
 .lower{
     
     font-size: 15px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+
+.lower2{
+    
+    font-size: 15px;
+    text-align: center;
+    font-style: italic;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
 #username{
     font-size: 15px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -56,6 +68,18 @@ body{
     float: left;
     border-radius: 10px;
     min-height: 40px;
+    padding: 5px;
+    margin: 10px;
+}
+.center{
+
+    background-color: rgb(158, 209, 226);
+    border: 2px solid rgb(247, 248, 248);
+    width: 90%;
+    float: left;
+    font-size: 5px;
+    border-radius: 2px;
+    min-height: 20px;
     padding: 5px;
     margin: 10px;
 }
@@ -96,14 +120,15 @@ body{
 #input_form button{
     
     display: inline-block;
+    background: transparent;
     height: 35px;
     width: 12%;
     font-family: cursive;
     font-size: 20px;
     margin: auto;
     cursor: pointer;
-    border: 2px solid grey;
-    border-radius: 5px;
+    border: none
+    /* border-radius: 200px; */
     
     
 
@@ -137,8 +162,7 @@ body{
     text-align: center;
 }
 #landing-form label{
-
-
+    
 }
 
 #landing-form button{
@@ -190,3 +214,20 @@ body{
     }
 }
 
+/* this is the code for glowing effect */
+.glow {
+    font-size: 80px;
+    border-color: #fff;
+    text-align: center;
+    animation: glow 1s ease-in-out infinite alternate;
+  }
+  
+  @-webkit-keyframes glow {
+    from {
+      box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+    }
+    
+    to {
+      box-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+    }
+  }

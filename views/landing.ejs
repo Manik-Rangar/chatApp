@@ -12,20 +12,33 @@
 <body>
     <div class="outer">
 
-        <form action="/chat" id="landing-form" >
+        <form action="/chat" name="land" id="landing-form" onsubmit="return validate()" >
             <label for="name" >
             Good Name
             <br>
-            <input type="text" name="name" id="name">
+            <input type="text" name="name" id="name" >
         </label>
 
         <br>
+
         <button id="form-submit" type="submit" >Join</button>
         
     </form>
 </div>
 
     <script>
+        
+        function validate(){
+            let x=document.forms["land"]["name"].value;
+            x=x.trim();
+            if(x==""){
+                // alert("kindly Enter Your Name To Proceed");
+                document.getElementById("name").classList.add("glow");
+                
+                return false;
+            }
+        }
+
         function print(){
         console.log("The user = " + document.getElementById("name").value);
         }
