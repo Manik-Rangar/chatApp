@@ -27,6 +27,7 @@ body{
     display: block;
     margin: auto;
     padding: 20px;
+    padding-bottom: 30px;
     overflow-y: scroll;   
 }
 #dark-mode{
@@ -70,6 +71,9 @@ body{
     min-height: 40px;
     padding: 5px;
     margin: 10px;
+    padding-bottom: 9px;
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 0px;
 }
 .center{
 
@@ -94,7 +98,11 @@ body{
     min-height: 40px;
     padding: 5px;
     margin: 10px;
+    padding-bottom: 9px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 25px;
     
+
 
 }
 

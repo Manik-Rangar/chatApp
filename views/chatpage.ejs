@@ -20,7 +20,8 @@
 
         <h1 style="text-align: center; font-family: cursive;" id="title">VChat</h1>
         <div class="container" id="cont">
-            <img src="https://img.icons8.com/ios-glyphs/30/000000/do-not-disturb-2.png" id="dark-mode" onclick="enableDarkMode()" />
+            <img src="https://img.icons8.com/ios-glyphs/30/000000/do-not-disturb-2.png" id="dark-mode"
+                onclick="enableDarkMode()" />
 
             <!-- <div class="left">
             <div class="upper">
@@ -45,7 +46,7 @@
         </div>
         <form id="input_form" name="chat_form">
 
-            <input type="text" name="chat" id="chat" placeholder="enter the message" autocomplete="off" >
+            <input type="text" name="chat" id="chat" placeholder="enter the message" autocomplete="off">
             <button class="btn" type="submit" id="submit_btn"><img
                     src="https://img.icons8.com/color/48/000000/send-letter--v1.png" style=" margin:-18px" /></button>
 
@@ -53,37 +54,36 @@
 
     </div>
     <script>
-        var dmEnabled=false;
-        function enableDarkMode(){
+        var dmEnabled = false;
+        function enableDarkMode() {
             // alert("enabled");
-            if(dmEnabled==false){
-                dmEnabled=true;
-                
-            document.body.style.background="url('https://egghead.io/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdg3gyk0gu%2Fimage%2Fupload%2Fv1618433525%2Fegghead-next-ebombs%2Ftailwindcss-dark-mode-nextjs-typography-prose%2Fdropped-in-dark-pyramids-cubes-spheres-cylinders_1.png&w=1920&q=100')";
+            if (dmEnabled == false) {
+                dmEnabled = true;
 
-            document.getElementById("title").style.color="white";
-            document.getElementById("cont").style.borderColor="white";
-            document.getElementById("dark-mode").src="https://img.icons8.com/ios/48/000000/sun--v2.png";
-            document.getElementById("dark-mode").style.filter="invert(1)";
+                document.body.style.background = "url('https://egghead.io/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdg3gyk0gu%2Fimage%2Fupload%2Fv1618433525%2Fegghead-next-ebombs%2Ftailwindcss-dark-mode-nextjs-typography-prose%2Fdropped-in-dark-pyramids-cubes-spheres-cylinders_1.png&w=1920&q=100')";
+
+                document.getElementById("title").style.color = "white";
+                document.getElementById("cont").style.borderColor = "white";
+                document.getElementById("dark-mode").src = "https://img.icons8.com/ios/48/000000/sun--v2.png";
+                document.getElementById("dark-mode").style.filter = "invert(1)";
 
 
             }
-            else
-            {
-                dmEnabled=false;
-                document.body.style.background="url('https://images.unsplash.com/photo-1542559272-819e1934ac51?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80')";
+            else {
+                dmEnabled = false;
+                document.body.style.background = "url('https://images.unsplash.com/photo-1542559272-819e1934ac51?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80')";
 
-                let bg=document.body;
-                bg.style.backgroundSize="100vh 100vw"
-                bg.style.backgroundRepeat="repeat-y"
-                bg.style.backgroundSize="cover"
+                let bg = document.body;
+                bg.style.backgroundSize = "100vh 100vw"
+                bg.style.backgroundRepeat = "repeat-y"
+                bg.style.backgroundSize = "cover"
 
-            
 
-            document.getElementById("title").style.color="black";
-            document.getElementById("cont").style.borderColor="black";
-            document.getElementById("dark-mode").src="https://img.icons8.com/ios-glyphs/30/000000/do-not-disturb-2.png";
-            document.getElementById("dark-mode").style.filter="invert(0)";
+
+                document.getElementById("title").style.color = "black";
+                document.getElementById("cont").style.borderColor = "black";
+                document.getElementById("dark-mode").src = "https://img.icons8.com/ios-glyphs/30/000000/do-not-disturb-2.png";
+                document.getElementById("dark-mode").style.filter = "invert(0)";
             }
 
 
